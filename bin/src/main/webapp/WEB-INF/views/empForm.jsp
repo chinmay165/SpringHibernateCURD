@@ -47,25 +47,17 @@
         <th>Gender</th>
       </tr>
       <c:forEach items="${empSer}" var="empEnty">
-      
+      <form action="editEmp">
         <tr>
         <td>${empEnty.empId}</td>	
           <td>${empEnty.empName}</td>
           <td>${empEnty.designation}</td>
           <td>${empEnty.gender}</td>
-          
-          
-          <form action="editEmp">
           <td><input type="hidden" name="empid" value="${empEnty.empId}"></td>
+          <td><input type="hidden" name="action" value="delete"></td>
           <td><input type="Submit" name="Edit" value="Edit">
-          </form>
-          <form action="deleteEmp" method="post">
-          <td><input type="hidden" name="empid" value="${empEnty.empId}"></td>
-          <td><input type="Submit" name="Delete" value="Delete">
-          </form>
-          
         </tr>
-        
+       </form> 
       </c:forEach>
 
     </table>

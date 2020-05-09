@@ -11,5 +11,6 @@ public interface EmpDao {
 	EmployeeEnty getEmpbyID(String empid);
 
 	   List<EmployeeEnty> list();
+	void deleteEmployee(String empid);
 	
 }

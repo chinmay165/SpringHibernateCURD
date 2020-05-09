@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.TypedQuery;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -43,5 +44,18 @@ public class EmpDaoImp implements EmpDao{
 		EmployeeEnty empEty = sessionFactory.getCurrentSession().load(EmployeeEnty.class, Long.parseLong(empid));
 		return empEty;
 		}
+
+	@Override
+	public void deleteEmployee(String empid) {
+		// TODO Auto-generated method stub
+		EmployeeEnty empEty = null;
+		Session session = sessionFactory.getCurrentSession();
+		empEty = session.load(EmployeeEnty.class, Long.parseLong(empid));
+		session.delete(empEty);
+						
+	}
+
+	
+	
 
 }

@@ -54,6 +54,25 @@ public class EmpServiceImp implements EmpService{
 				
 	}
 
+	@Transactional
+	public void delete(String empid) {
+		//EmployeeEnty empEty = empdao.getEmpbyID(String.valueOf(empojo.getEmpId()));
+		//empdao.delete(empid);
+		
+	}
+
+	@Transactional
+	public String deleteEmployee(String empid) {
+		// TODO Auto-generated method stub
+		try {
+			empdao.deleteEmployee(empid);
+			return "succsess";
+		}catch(Exception e) {e.printStackTrace();
+			return "failed";
+		}
+		
+	}
+
 	
 	
 }
